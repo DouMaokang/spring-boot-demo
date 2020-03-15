@@ -5,6 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.UUID;
 
+
+/**
+ * Represents a Person.
+ */
 public class Person {
 
     private UUID id;

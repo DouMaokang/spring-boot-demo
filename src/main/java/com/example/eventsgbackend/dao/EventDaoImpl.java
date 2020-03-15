@@ -1,7 +1,6 @@
 package com.example.eventsgbackend.dao;
 
 import com.example.eventsgbackend.model.Event;
-import com.example.eventsgbackend.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -22,9 +21,14 @@ public class EventDaoImpl implements EventDao {
     @Override
     public void postEvent(Event event) {
         final String sql = "INSERT INTO event VALUES (?, ?, ?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql, UUID.randomUUID(), event.getTitle(), event.getDescription(),
-                event.getMaxCapacity(), event.getNumOfParticipants(),
-                event.getOverallRating(), event.getAttendanceRate());
+        jdbcTemplate.update(sql,
+                UUID.randomUUID(),
+                event.getTitle(),
+                event.getDescription(),
+                event.getMaxCapacity(),
+                event.getNumOfParticipants(),
+                event.getOverallRating(),
+                event.getAttendanceRate());
     }
 
     @Override
